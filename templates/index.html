@@ -1,0 +1,8 @@
+<h1>Available Surveys</h1>
+<ul>
+  {% for survey in surveys %}
+    <li><a href="{% url 'submit_survey' survey.id %}">{{ survey.title }}</a></li>
+  {% empty %}
+    <li>No active surveys available.</li>
+  {% endfor %}
+</ul>

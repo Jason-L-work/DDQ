@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Answers</title>
+</head>
+<body>
+    <h1>Survey Answers (Staff Only)</h1>
+
+    {% if responses %}
+        <ul>
+        {% for response in responses %}
+            <li>
+                <strong>Name:</strong> {{ response.name }}<br>
+                <strong>Comment:</strong> {{ response.comment }}<br>
+                {% if response.uploaded_file %}
+                    <a href="{{ response.uploaded_file.url }}">Download Attachment</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No responses yet.</p>
+    {% endif %}
+</body>
+</html>

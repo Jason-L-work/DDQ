@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>Profile of {{ user.username }}</h1>
+
+  <p><strong>Email:</strong> {{ user.email }}</p>
+
+  <p><strong>Bio:</strong> {{ user.profile.bio|default:"No bio set." }}</p>
+
+  {% if user.profile.avatar %}
+    <img src="{{ user.profile.avatar.url }}" alt="Avatar" style="max-width:150px; border-radius: 50%;" />
+  {% else %}
+    <p>No avatar uploaded.</p>
+  {% endif %}
+{% endblock %}
