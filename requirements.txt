@@ -1,0 +1,24 @@
+Django==4.2.6
+django-simple-history>=3.3
+django-ckeditor>=6.5
+django-ckeditor-filer>=1.2
+django-widget-tweaks>=1.4
+django-allauth>=0.54
+django-bootstrap5>=23.1
+django-survey-and-report>=1.4
+
+markdown>=3.4
+geoip2>=4.6
+easy-thumbnails>=2.8
+validators>=0.22.0
+openai>=0.27
+
+psycopg2>=2.8 ; sys_platform == 'win32' # 2.9.3 is current version but causes a problem. See https://stackoverflow.com/questions/68024060/assertionerror-database-connection-isnt-set-to-utc
+psycopg2-binary>=2.8 ; sys_platform == 'linux'
+
+git+https://github.com/ptav/django-copy@bootstrap5.v2#django-copy
+
+# Non-essential utlilities
+pylint-django ; sys_platform == 'win32'
+django-extensions
+ipython
